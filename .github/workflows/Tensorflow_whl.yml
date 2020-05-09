@@ -38,7 +38,7 @@ jobs:
     - name: build tensorflow
       run: |
         ./configure
-        bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
+        bazel build --config=opt --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-O3 //tensorflow/tools/pip_package:build_pip_package
     - name: Archive
       run: tar -czf Release.tar.gz /tmp/* 
     - name: Upload all Release
