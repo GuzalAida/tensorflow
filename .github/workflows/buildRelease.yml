@@ -21,7 +21,9 @@ jobs:
     - name: Install dependencies 4 
       run: pip install -U --user keras_preprocessing --no-deps
     - name: Install dependencies bazel 
-      run: curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add - ;echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list;sudo apt update && sudo apt install bazel
+      run: curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add - ;echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+    - name: Install dependencies bazel 2 
+      run: sudo apt update && sudo apt install bazel
     - name: Install dependencies checkout 
       run: git checkout r2.1
     - name: build 
