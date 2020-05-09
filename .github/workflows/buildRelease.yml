@@ -2,7 +2,7 @@ name: tensorflow Release
 
 on: 
   release:
-    types: [push]
+    types: [push,published]
 
 jobs:
 
