@@ -24,9 +24,9 @@ jobs:
       run: curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add - ;echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list;sudo apt update && sudo apt install bazel
     - name: Install dependencies checkout 
       run: git checkout r2.1
-     - name: build 
+    - name: build 
       run: ./configure --config=mkl;bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
-     - name: Archive
+    - name: Archive
       run: tar -czf Release.tar.gz /tmp/* 
     - name: Upload all Release
       uses: JasonEtco/upload-to-release@master
