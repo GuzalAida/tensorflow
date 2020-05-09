@@ -37,7 +37,7 @@ jobs:
         sudo apt install bazel
     - name: build tensorflow
       run: |
-        ./configure --config=mkl
+        ./configure
         bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
     - name: Archive
       run: tar -czf Release.tar.gz /tmp/* 
