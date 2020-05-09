@@ -7,7 +7,7 @@ on:
 jobs:
 
   release:
-    name: build Tensorflow Release
+    name: Tensorflow Release
     runs-on: ubuntu-latest
 
     steps:
